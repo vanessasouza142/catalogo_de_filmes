@@ -1,0 +1,16 @@
+<h3> Gênero </h3>
+<div>Nome: <%= @movie_genre.name %></div>
+<%= link_to 'Editar', edit_movie_genre_path(@movie_genre.id)%>
+
+<% if flash[:notice].present? %>
+<div>
+<%= flash[:notice] %>
+</div>
+<% end %>
+
+<h4>Filmes cadastrados com gênero: <%= @movie_genre.name %></h4>
+<ul>
+<% @movies.each do |movie|%>
+<li><%= movie.title%></li>
+<% end %>
+</ul>

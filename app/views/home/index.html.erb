@@ -1,0 +1,17 @@
+<h3> Filmes Cadastrados </h3>
+<% @movies.each do |movie| %>
+<%= link_to "#{movie.title}-#{movie.release_year}", movie_path(movie.id), style: "margin-right: 15px" %>
+<% end %>
+<h4><%= link_to 'Cadastrar novo filme', new_movie_path %></h4>
+
+<h3> Gêneros Cadastrados </h3>
+<% @movie_genres.each do |movie_genre| %>
+<%= link_to movie_genre.name, movie_genre_path(movie_genre.id), style: "margin-right: 15px" %>
+<% end %>
+<h4><%= link_to 'Cadastrar novo gênero', new_movie_genre_path %></h4>
+
+<h3> Diretores Cadastrados </h3>
+<% @director.each do |director| %>
+<%= link_to director.name, director_path(director.id), style: "margin-right: 15px" %>
+<% end %>
+<h4><%= link_to 'Cadastrar novo diretor', new_director_path %></h4>

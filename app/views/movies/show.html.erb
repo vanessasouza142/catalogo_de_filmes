@@ -1,0 +1,19 @@
+<h3> Filme </h3>
+<div>Nome: <%= @movie.title %></div>
+<div>Ano de Lançamento: <%= @movie.release_year %></div>
+<div>Sinopse: <%= @movie.sinopsis %></div>
+<div>País de Origem: <%= @movie.origin_country %></div>
+<div>Duração: <%= @movie.duration %></div>
+<div>Diretor: <%= @movie.director.name %></div>
+<div>Gênero: <%= @movie.movie_genre.name %></div>
+<div>Status: <%= @movie.status %></div>
+
+<%= link_to 'Editar', edit_movie_path(@movie.id)%>
+
+<% if flash[:notice].present? %>
+<div>
+<%= flash[:notice] %>
+</div>
+<% end %>
+
+<%= button_to 'Publicar', publish_movie_path, {method: 'patch'} %>

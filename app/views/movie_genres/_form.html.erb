@@ -1,0 +1,11 @@
+<%= form_with model:movie_genre do |f|%>
+<div>
+<%= f.label 'Nome' %>
+<%= f.text_field :name %>
+</div>
+
+<div style="margin-top: 10px">
+<%= f.submit 'Salvar' %>
+</div>
+
+<% end %>
